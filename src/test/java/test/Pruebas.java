@@ -4,8 +4,11 @@
  */
 package test;
 
+import dao.DevolucionDAO;
 import dao.LibroDAO;
+import dao.PrestamoDAO;
 import dao.UsuarioDAO;
+import objetosnegocio.Libro;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -17,10 +20,14 @@ public class Pruebas {
 
     UsuarioDAO usuarioDao;
     LibroDAO libroDao;
+    PrestamoDAO prestamoDao;
+    DevolucionDAO devolucionDao;
 
     public Pruebas() {
         usuarioDao = new UsuarioDAO();
         libroDao = new LibroDAO();
+        prestamoDao = new PrestamoDAO();
+        devolucionDao = new DevolucionDAO();
     }
 
     @Test
@@ -55,11 +62,22 @@ public class Pruebas {
 
     @Test
     public void registrarPrestamo() {
+        Libro libro = new Libro();
+        assertTrue(prestamoDao.registrarPrestamo("libro", "usuario"));
 
+        libro.setDisponibilidad("prestado");
+        String disponibilidad = libro.getDisponibilidad();
+        assertEquals("prestado", disponibilidad);
     }
 
     @Test
     public void devolverLibro() {
+        Libro libro = new Libro();
+        assertTrue(devolucionDao.devolverLibro("libro"));
+
+        libro.setDisponibilidad("disponble");
+        String disponibilidad = libro.getDisponibilidad();
+        assertEquals("disponble", disponibilidad);
     }
 
     @Test
