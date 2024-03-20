@@ -4,6 +4,8 @@
  */
 package test;
 
+import dao.LibroDAO;
+import dao.UsuarioDAO;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -13,37 +15,42 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class Pruebas {
 
+    UsuarioDAO usuarioDao;
+    LibroDAO libroDao;
+
     public Pruebas() {
+        usuarioDao = new UsuarioDAO();
+        libroDao = new LibroDAO();
     }
 
     @Test
     public void autenticarUsuario() {
-//        assertEquals(usuario1, usuarioDao.buscarUsuario(usuario));
+        assertEquals("", usuarioDao.autenticarUsuario("hola"));
     }
 
     @Test
     public void registrarUsuario() {
-
+        assertTrue(usuarioDao.registrarUsuario("hola"));
     }
 
     @Test
     public void editarUsuario() {
-
+        assertTrue(usuarioDao.editarUsuario("hola"));
     }
 
     @Test
     public void agregarLibro() {
-
+        assertTrue(libroDao.agregarLibro("libro"));
     }
 
     @Test
     public void editarLibro() {
-
+        assertTrue(libroDao.editarLibro("libro"));
     }
 
     @Test
     public void eliminarLibro() {
-
+        assertTrue(libroDao.eliminarLibro("libro"));
     }
 
     @Test
@@ -53,21 +60,23 @@ public class Pruebas {
 
     @Test
     public void devolverLibro() {
-
     }
 
     @Test
     public void buscarLibroPorTitulo() {
+        assertEquals(libroDao.buscarLibroPorTitulo("titulo"), "libro");
 
     }
 
     @Test
     public void buscarLibroPorAutor() {
+        assertEquals(libroDao.buscarLibroPorAutor("autor"), "libro");
 
     }
 
     @Test
     public void buscarLibroPorIdentificador() {
+        assertEquals(libroDao.buscarLibroPorIdentificador(1), "libro");
 
     }
 
