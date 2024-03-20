@@ -8,7 +8,7 @@ import dao.DevolucionDAO;
 import dao.LibroDAO;
 import dao.PrestamoDAO;
 import dao.UsuarioDAO;
-import objetosnegocio.Libro;
+import objetosnegocio.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -22,47 +22,50 @@ public class Pruebas {
     LibroDAO libroDao;
     PrestamoDAO prestamoDao;
     DevolucionDAO devolucionDao;
+    Usuario usuario;
+    Libro libro;
 
     public Pruebas() {
         usuarioDao = new UsuarioDAO();
         libroDao = new LibroDAO();
         prestamoDao = new PrestamoDAO();
         devolucionDao = new DevolucionDAO();
+        libro = new Libro();
+        usuario = new Usuario();
     }
 
     @Test
     public void autenticarUsuario() {
-        assertEquals("", usuarioDao.autenticarUsuario("hola"));
+        assertTrue( usuarioDao.autenticarUsuario(usuario));
     }
 
     @Test
     public void registrarUsuario() {
-        assertTrue(usuarioDao.registrarUsuario("hola"));
+        assertTrue(usuarioDao.registrarUsuario(usuario));
     }
 
     @Test
     public void editarUsuario() {
-        assertTrue(usuarioDao.editarUsuario("hola"));
+        assertTrue(usuarioDao.editarUsuario(usuario));
     }
 
     @Test
     public void agregarLibro() {
-        assertTrue(libroDao.agregarLibro("libro"));
+        assertTrue(libroDao.agregarLibro(libro));
     }
 
     @Test
     public void editarLibro() {
-        assertTrue(libroDao.editarLibro("libro"));
+        assertTrue(libroDao.editarLibro(libro));
     }
 
     @Test
     public void eliminarLibro() {
-        assertTrue(libroDao.eliminarLibro("libro"));
+        assertTrue(libroDao.eliminarLibro(libro));
     }
 
     @Test
     public void registrarPrestamo() {
-        Libro libro = new Libro();
         assertTrue(prestamoDao.registrarPrestamo("libro", "usuario"));
 
         libro.setDisponibilidad("prestado");
@@ -72,7 +75,6 @@ public class Pruebas {
 
     @Test
     public void devolverLibro() {
-        Libro libro = new Libro();
         assertTrue(devolucionDao.devolverLibro("libro"));
 
         libro.setDisponibilidad("disponble");

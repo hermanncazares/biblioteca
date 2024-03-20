@@ -4,6 +4,8 @@
  */
 package dao.interfaces;
 
+import objetosnegocio.Libro;
+
 
 /**
  *
@@ -11,10 +13,10 @@ package dao.interfaces;
  */
 public interface ILibro {
 
-    public boolean agregarLibro(String libro);
+    public boolean agregarLibro(Libro libro);
 
-    public boolean editarLibro(String libro);
+    public boolean editarLibro(Libro libro);
 
-    public boolean eliminarLibro(String libro);
+    public boolean eliminarLibro(Libro libro);
 
 }

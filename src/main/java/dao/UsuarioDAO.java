@@ -5,6 +5,7 @@
 package dao;
 
 import dao.interfaces.IUsuario;
+import objetosnegocio.Usuario;
 
 /**
  *
@@ -13,18 +14,18 @@ import dao.interfaces.IUsuario;
 public class UsuarioDAO implements IUsuario {
 
     @Override
-    public boolean autenticarUsuario(String usuario) {
+    public boolean autenticarUsuario(Usuario usuario) {
         return true;
     }
 
     @Override
-    public boolean registrarUsuario(String usuario) {
+    public boolean registrarUsuario(Usuario usuario) {
 
         return true;
     }
 
     @Override
-    public boolean editarUsuario(String usuario) {
+    public boolean editarUsuario(Usuario usuario) {
         return true;
     }
 

@@ -4,13 +4,15 @@
  */
 package dao.interfaces;
 
+import objetosnegocio.Usuario;
+
 
 /**
  *
  * @author fabri
  */
 public interface IUsuario {
-    public boolean autenticarUsuario(String usuario);
-    public boolean registrarUsuario(String usuario);
-    public boolean editarUsuario(String usuario);
+    public boolean autenticarUsuario(Usuario usuario);
+    public boolean registrarUsuario(Usuario usuario);
+    public boolean editarUsuario(Usuario usuario);
 }

@@ -5,6 +5,7 @@
 package dao;
 
 import dao.interfaces.ILibro;
+import objetosnegocio.Libro;
 
 /**
  *
@@ -13,17 +14,17 @@ import dao.interfaces.ILibro;
 public class LibroDAO implements ILibro {
 
     @Override
-    public boolean agregarLibro(String libro) {
+    public boolean agregarLibro(Libro libro) {
         return true;
     }
 
     @Override
-    public boolean editarLibro(String libro) {
+    public boolean editarLibro(Libro libro) {
         return true;
     }
 
     @Override
-    public boolean eliminarLibro(String libro) {
+    public boolean eliminarLibro(Libro libro) {
         return true;
     }
 
