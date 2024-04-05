@@ -27,14 +27,17 @@ public class Usuario {
     
     @Column(name = "id_personal")
     private String id_personal;
-    
+
     @Column(name = "usarioTipo", nullable = false)
     @Enumerated(EnumType.STRING)
     private UsuarioTipo usuarioTipo;
-    
+
     @Column(name = "nombre")
     private String nombre;
-    
+
+    @Column(name = "password")
+    private String password;
+
     //Relaciones
     @OneToMany(mappedBy = "usuario")
     private List<Prestamo> prestamo;
