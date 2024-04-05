@@ -9,5 +9,6 @@ package dominio;
  * @author Jairi
  */
 public enum UsuarioTipo {
-    
+    ALUMNO,
+    BIBLIOTECARIO
 }
