@@ -4,7 +4,7 @@ package objetosnegocio;
  *
  * @author fabri
  */
-public class Libro {
+public class LibroNegocio {
 
     private String disponibilidad;
 

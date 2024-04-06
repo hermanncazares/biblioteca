@@ -45,25 +45,20 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(long id, String id_personal, UsuarioTipo usuarioTipo, String nombre, List<Prestamo> prestamo) {
+    public Usuario(long id, String id_personal, UsuarioTipo usuarioTipo, String nombre, String password, List<Prestamo> prestamo) {
         this.id = id;
         this.id_personal = id_personal;
         this.usuarioTipo = usuarioTipo;
         this.nombre = nombre;
+        this.password = password;
         this.prestamo = prestamo;
     }
 
-    public Usuario(String id_personal, UsuarioTipo usuarioTipo, String nombre, List<Prestamo> prestamo) {
+    public Usuario(String id_personal, UsuarioTipo usuarioTipo, String nombre, String password) {
         this.id_personal = id_personal;
         this.usuarioTipo = usuarioTipo;
         this.nombre = nombre;
-        this.prestamo = prestamo;
-    }
-
-    public Usuario(String id_personal, UsuarioTipo usuarioTipo, String nombre) {
-        this.id_personal = id_personal;
-        this.usuarioTipo = usuarioTipo;
-        this.nombre = nombre;
+        this.password = password;
     }
 
     public long getId() {
@@ -98,6 +93,14 @@ public class Usuario {
         this.nombre = nombre;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public List<Prestamo> getPrestamo() {
         return prestamo;
     }
@@ -108,8 +111,8 @@ public class Usuario {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 43 * hash + (int) (this.id ^ (this.id >>> 32));
+        int hash = 3;
+        hash = 23 * hash + (int) (this.id ^ (this.id >>> 32));
         return hash;
     }
 
@@ -130,8 +133,8 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" + "id=" + id + ", id_personal=" + id_personal + ", usuarioTipo=" + usuarioTipo + ", nombre=" + nombre + ", prestamo=" + prestamo + '}';
+        return "Usuario{" + "id=" + id + ", id_personal=" + id_personal + ", usuarioTipo=" + usuarioTipo + ", nombre=" + nombre + ", password=" + password + ", prestamo=" + prestamo + '}';
     }
-    
-    
+
+  
 }

@@ -6,8 +6,8 @@ package objetosnegocio;
 
 /**
  *
- * @author salo_
+ * @author Jairi
  */
-public class Prestamo  {
+public class CopiaNegocio {
     
 }

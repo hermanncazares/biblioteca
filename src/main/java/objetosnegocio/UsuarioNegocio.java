@@ -8,6 +8,6 @@ package objetosnegocio;
  *
  * @author fabri
  */
-public class Usuario {
+public class UsuarioNegocio {
     
 }
